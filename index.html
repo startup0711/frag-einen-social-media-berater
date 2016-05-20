@@ -89,7 +89,7 @@
                                     <!-- Image-Logo: Remove this comments and the section above Text-Logo if you want to add an Image-Logo (recommended sizes -> max-height:50, max-width:200) 
 
                                     <a href="#top" class="navbar-brand img-logo scrollto" title="SmartMvp">
-                                        <img src="img/logo.png" alt="Logo">
+                                        <img src="assets/images/logo.png" alt="Logo">
                                     </a> 
                                     -->
 
@@ -126,7 +126,7 @@
                                 
                                 <!-- Welcome - Hero Message -->
                                 <h1 class="text-white">Fragen Sie unsere Social Media Nerds.</h1>
-                                <p class="text-white">Innerhalb von 90 Minuten bekommen Sie eine Antwort. (Werktags 9 - 18 Uhr)</p>
+                                <p class="text-white">Innerhalb von 90 Minuten erhalten Sie eine Antwort. <br>(Werktags 9 - 18 Uhr)</p>
 
                                 <p class="text-white" style="font-size:12px !important">Content Marketing, Community Management, Social Advertising, Social Media Monitoring und Reporting, Messe- & Eventkommunikation, Leadgenerierung, Strategieprozesse, Blogs & Social Landinpages, Fanpage-Merging, u.a.</p>
 
@@ -205,7 +205,7 @@
                                 <i class="icon icon-pricetags"></i>
                             </div>
                             <h4>2. Einsatz</h4>
-                            <p>Bestimmen Sie was Ihnen die Antwort Wert ist. Der minimale Einsatz ist 20€.</p>  
+                            <p>Bestimmen Sie was Ihnen die Antwort Wert ist. Der minimale Einsatz ist 30€.</p>  
                         </div>
                         <div class="col-sm-3 intro-content">
                             <div class="icon-lg">
@@ -256,6 +256,81 @@
              /END SECTION 
         ============================== -->
 
+        <!-- =========================================
+                     Login/Signup Bootstrap Modal
+                ==========================================  -->
+                <div class="modal fade login" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            
+                            <!-- Modal-Header -->
+                            <div class="modal-header">
+                                <!-- Close Button -->
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <i class="icon icon_close_alt2"></i>
+                                </button>
+                                <!-- Modal-Header Title-->
+                                <h4 class="modal-title">Melden Sie sich an</h4>
+                                <p class="modal-subtitle">Geben Sie E-Mail-Adresse und Passwort ein</p>
+                            </div><!-- /End Modal-Header -->
+
+                            <!-- Modal-Body Content -->
+                            <div class="modal-body">  
+                                <div class="box">
+                                     <div class="content">
+                                        <!-- Login Form -->
+                                        <div class="loginBox">
+                                            <form id="login-modal" role="form">
+                                                <!-- Success/Alert Notification -->
+                                                <p class="lm-success"><i class="icon icon_check_alt2"></i> <strong>Glückwunsch!</strong></p>
+                                                <p class="lm-failed"><i class="icon icon_close_alt2"></i><strong> Da lief etwas schief!</strong></p>
+                                                <!-- Input Fields -->
+                                                <input id="lm-email" class="form-control input-lg" type="text" placeholder="Email" name="lm-email" required>
+                                                <input id="lm-password" class="form-control input-lg" type="password" placeholder="Password" name="lm-password" required>
+                                                <!-- Login Button -->
+                                                <button class="btn btn-color">Login</button>
+                                            </form>
+                                        </div><!-- /End Login Form -->
+                                     </div>
+                                </div><!-- /End Login Form Box -->
+                                <div class="box">
+                                    <!-- Signup Form -->
+                                    <div class="content registerBox" style="display:none;">
+                                        <form id="signup-modal" role="form">
+                                            <!-- Success/Alert Notification -->
+                                            <p class="sm-success"><i class="icon icon_check_alt2"></i> <strong>Glückwunsch!</strong></p>
+                                            <p class="sm-failed"><i class="icon icon_close_alt2"></i><strong> Da lief etwas schief</strong></p>
+                                            <!-- Input Fields -->
+                                            <input id="sm-email" class="form-control input-lg" type="text" placeholder="Email" name="sm-email" required>
+                                            <input id="sm-password" class="form-control input-lg" type="password" placeholder="Password" name="sm-password">
+                                            <input id="sm-confirm" class="form-control input-lg" type="password" placeholder="Repeat Password" name="sm-confirm">
+                                            <!-- Signup Button -->
+                                            <button class="btn btn-color">Account anlegen</button>
+                                        </form>
+                                        
+                                    </div><!-- /End Signup Form -->
+                                </div><!-- /End Signup Form Box -->
+                            </div><!-- /End Modal-Body -->
+
+                            <!-- Modal-Footer -->
+                            <div class="modal-footer">
+                                <!-- Login-Footer. Redirect to Signup-Modal-->
+                                <div class="forgot login-footer">
+                                    <span>Sie haben noch keinen Account?
+                                         <a href="javascript: showRegisterForm();">Registrieren</a>
+                                    </span>
+                                </div>
+                                <!-- Signup-Footer. Redirect to Login-Modal -->
+                                <div class="forgot register-footer" style="display:none">
+                                     <span>Sie haben schon einen Account?</span>
+                                     <a href="javascript: showLoginForm();">Anmelden</a>
+                                </div>
+                            </div><!-- /End Modal-Footer -->      
+                          
+                        </div><!-- /End Modal Content -->
+                    </div><!-- /End Modal Dialog -->
+                </div><!-- /End Modal -->
+
         <!-- =============================
              PRICING SECTION
         ============================== -->
@@ -276,7 +351,7 @@
                                 <p class="price">Individuell</p>
                                 <h4>Ihre Wahl</h4>
                                 <ul class="pricing-features">
-                                    <li>Ab 20€</li>
+                                    <li>Ab 30€</li>
                                     <li>Alle Themengebiete</li>
                                     <li>Antwort innerhalb 90 Minuten</li>
                                 </ul>
@@ -296,7 +371,7 @@
                                     <li>Telefon-Support</li>
                                     <li>Antwort innerhalb 60 Minuten</li>
                                 </ul>
-                                <a href="#canvas-bg" class="btn btn-color scrollto">Anmelden</a>
+                                <a class="btn btn-nav btn-signup" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Anmelden</a>
                             </div>
                         </div>
 
@@ -310,7 +385,7 @@
                                     <li>Antwort innerhalb 60 Minuten</li>
                                     <li>Bevorzugte Priorisierung</li>
                                 </ul>
-                                <a href="#canvas-bg" class="btn btn-color scrollto">Anmelden</a>
+                                <a class="btn btn-nav btn-signup" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Anmelden</a>
                             </div>
                         </div>
 
@@ -354,7 +429,7 @@
                                         <!-- Testimonial quote -->
                                         <p style="margin-bottom:20px !important">Im Fokus der Social-Media-Aktivitäten steht bei der Krones AG die Strategie „Business To Human“. „Es ist ein wesentliches Ziel, dort hinzugehen, wo die Menschen ohnehin aktiv sind“.</p>
                                         <!-- Testimonial image -->
-                                        <img src="img/testimonials/schmidt.png" alt=" ">
+                                        <img src="assets/images/testimonials/schmidt.png" alt=" ">
                                         <!-- Testimonial info -->
                                         <p class="testimonial-name"><span>Charles Schmidt</span>Corporate Social Media Officer & Head of Creations and Global Communications @ Krones AG</p>
                                     </blockquote>
@@ -364,7 +439,7 @@
                                         <!-- Testimonial quote -->
                                         <p style="margin-bottom:20px !important">Wir bringen technisch anspruchsvolle Produkte einer spitzen Zielgruppe nahe. Die Unterstützung unserer Vertriebe im Verkaufsprozess spielt dabei eine große Rolle.</p>
                                         <!-- Testimonial image -->
-                                        <img src="img/testimonials/blauig.png" alt=" ">
+                                        <img src="assets/images/testimonials/blauig.png" alt=" ">
                                         <!-- Testimonial info -->
                                         <p class="testimonial-name"><span>Andreas Blauig</span>Global Social Media Manager @ Dentsply Sirona</p>
                                     </blockquote>
@@ -374,7 +449,7 @@
                                         <!-- Testimonial quote -->
                                         <p style="margin-bottom:20px !important">QIAGEN befindet sich in einer Phase der digitalen Transformation, zu der Social Media einen wichtigen Beitrag leistet.</p>
                                         <!-- Testimonial image -->
-                                        <img src="img/testimonials/theuringer.png" alt=" ">
+                                        <img src="assets/images/testimonials/theuringer.png" alt=" ">
                                         <!-- Testimonial info -->
                                         <p class="testimonial-name"><span>Dr. Thomas Theuringer</span>Corporate Social Media Officer & Head of Creations and Global Communications @ Qiagen</p>
                                     </blockquote>
@@ -387,19 +462,19 @@
                             <li class="tab col-md-6">
                                 <a href="#tab-testimonials-1">
                                     <!-- Testimonial logo -->
-                                    <img src="img/press-logos/krones.png" alt="">
+                                    <img src="assets/images/press-logos/krones.png" alt="">
                                 </a>
                             </li>
                             <li class="tab col-md-6">
                                 <a href="#tab-testimonials-2">
                                     <!-- Testimonial logo -->
-                                    <img src="img/press-logos/dentsply.png" alt="">
+                                    <img src="assets/images/press-logos/dentsply.png" alt="">
                                 </a>
                             </li>
                             <li class="tab col-md-6">
                                 <a href="#tab-testimonials-3">
                                     <!-- Testimonial logo -->
-                                    <img src="img/press-logos/qiagen.png" alt="">
+                                    <img src="assets/images/press-logos/qiagen.png" alt="">
                                 </a>
                             </li>
                         </ul><!-- /End Etabs --> 
