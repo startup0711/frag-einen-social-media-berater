@@ -113,9 +113,6 @@
                     </div><!-- /End Container -->
                 </nav><!-- /End Sticky Navigation -->
 
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/parsley.min.js"></script>
                 
                 <!-- =========================================
                      Hero-Section
@@ -143,22 +140,40 @@
                                 <div class="col-sm-12">
                                     <div class="fast-reg-box">
                                         <!-- Fast Registration Form -->
-                                        <form id="smfrage" role="form">
+                                        <form id="smfrage" role="form" class="demo-form">
                                             <!-- Notification -->
                                             <p class="fast-success"><i class="icon icon_check_alt2"></i> <strong>Wir werden Sie gleich benachrichtigen</strong></p>
                                             <p class="fast-failed"><i class="icon icon_close_alt2"></i><strong> Das lief etwas schief!</strong></p>  
 
                                             <!-- Input fields -->
                                             <div class="col-md-12">
-                                            <div class="form-group" style="width: 100% !important;" >
+                                                <div class="form-section" style="color:#fff">
                                                 <textarea class="form-control" name="frage" id="frage" class="form-control input-lg" placeholder="Wie können wir Ihnen helfen?" rows="3" style="height:200px;" required></textarea>
-
-                                                <button class="btn btn-color" style="width:100% !important;">Frage stellen</button>
                                                 </div>
-                                            </div>
+
+                                              <div class="form-section" style="color:#fff">
+
+                                              <label for="email">E-Mail-Adresse</label>
+                                                <input type="text" class="form-control" name="email" required="">
+
+                                                <label for="value">Wie viel ist Ihnen die Frage Wert?</label>
+                                                <input type="number" class="form-control" min="30" placeholder="Geben Sie einen Betrag in Euro an. Minimum: 30€" required="">
+
+
+                                                
+                                              </div>
+
+                                                <div class="form-navigation">
+                                                    <button type="button" class="previous btn btn-color pull-left">&lt; Zurück</button>
+                                                    <button type="button" class="next btn btn-color pull-right">Frage stellen &gt;</button>
+                                                    <input type="submit" class="btn btn-color pull-right" value="Bezahlen">
+                                                    <span class="clearfix"></span>
+                                                  </div>
+
                                             <!-- Signup Button -->
                                             
                                         </form>
+
 
 
                                     </div><!-- /End Fast-Reg -->
@@ -619,15 +634,54 @@
     <!-- =========================
          SCRIPTS 
     ============================== -->
-    <script src="assets/js/plugins/jquery1.11.0.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/plugins/bootstrap.min.js"></script>
     <script src="assets/js/plugins/jquery.easing.1.3.min.js"></script>
     <script src="assets/js/plugins/modernizr.custom.min.js"></script>
     <script src="assets/js/plugins/plugins.min.js"></script>
-    <script src="assets/js/plugins/twitter/tweetie.min.js"></script>
     <!-- Custom Script -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/parsley.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+$(function () {
+  var $sections = $('.form-section');
 
+  function navigateTo(index) {
+    // Mark the current section with the class 'current'
+    $sections
+      .removeClass('current')
+      .eq(index)
+        .addClass('current');
+    // Show only the navigation buttons that make sense for the current section:
+    $('.form-navigation .previous').toggle(index > 0);
+    var atTheEnd = index >= $sections.length - 1;
+    $('.form-navigation .next').toggle(!atTheEnd);
+    $('.form-navigation [type=submit]').toggle(atTheEnd);
+  }
+
+  function curIndex() {
+    // Return the current index by looking at which section has the class 'current'
+    return $sections.index($sections.filter('.current'));
+  }
+
+  // Previous button is easy, just go back
+  $('.form-navigation .previous').click(function() {
+    navigateTo(curIndex() - 1);
+  });
+
+  // Next button goes forward iff current block validates
+  $('.form-navigation .next').click(function() {
+    if ($('.demo-form').parsley().validate({group: 'block-' + curIndex()}))
+      navigateTo(curIndex() + 1);
+  });
+
+  // Prepare sections by setting the `data-parsley-group` attribute to 'block-0', 'block-1', etc.
+  $sections.each(function(index, section) {
+    $(section).find(':input').attr('data-parsley-group', 'block-' + index);
+  });
+  navigateTo(0); // Start at the beginning
+});
+</script>
+<script src="assets/js/custom.js"></script>
     
 
 </body>

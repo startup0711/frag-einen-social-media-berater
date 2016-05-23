@@ -1,34 +1,20 @@
-/* 
-Template Name: SmartMVP - Responsive Premium Startup Landing Page Template
-Theme URL: http://themedept.com/demo/smartmvp/index.html
-Description: SmartMVP - Responsive Premium Startup Landing Page Template
-Author: ThemeDept
-Author URL: http://themedept.com
-Version: 1.2.0
-Website: http://themedept.com
-Tags: startup landing page, app landing page, html5 template, one page, startup, saas, mvp, landing page
-*/
 
+/* ==========================================================================
+   Multi-Step Forms
+========================================================================== */ 
+/*------------------------------------------*/
 
-
-/* ------------------------------------------ */
-/*             TABLE OF CONTENTS
-/* ------------------------------------------ */
-
-/*   01 - General Style                          */
-/*   02 - Typography                             */
-/*   03 - Buttons & Icons                        */
-/*   04 - Header & Navigation                    */
-/*   05 - Login/Signup Modal                     */
-/*   06 - Sections Settings                      */
-/*   07 - Testimonials                           */
-/*   08 - Features Tab                           */
-/*   09 - Fast Reg, Newsletter & Signup Divider  */
-/*   10 - Charts & Showcase Section              */
-/*   11 - Pricing Tabs                           */
-/*   12 - Team Section                           */
-/*   13 - Mobile Download Section                */
-/*   14 - Footer                                 */
+.form-section {
+  padding-left: 15px;
+  margin-bottom:10px;
+  display: none;
+}
+.form-section.current {
+  display: inherit;
+}
+.btn-info, .btn-default {
+  margin-top: 10px;
+}
 
 
 /* ==========================================================================
