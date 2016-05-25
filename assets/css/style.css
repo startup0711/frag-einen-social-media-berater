@@ -22,7 +22,14 @@
     font-weight:600;
 }
 
+.nopad {
+    padding: 5px !important;
+    font-weight: 400 !important;
+}
 
+.frage-antwort {
+    margin-bottom:10px !important;
+}
 
 /* ==========================================================================
    01. GENERAL STYLE
@@ -859,6 +866,14 @@ p {
 .img-right {
     right: 0;
     background: url(../images/img-right.jpg) 50% 0 no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.img-right-2 {
+    right: 0;
+    background: url(../images/img-right-2.jpg) 50% 0 no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
