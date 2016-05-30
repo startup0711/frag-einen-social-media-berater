@@ -3,11 +3,11 @@ var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
 app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) {
     //Minimal slider config
     $scope.minSlider = {
-        value: 5,
+        value: 29,
         options: {
-            ceil: 10,
-            floor: 0,
-            showTicks: true
+            ceil: 180,
+            floor: 29,
+            showTicks: false
         }
     };
 
@@ -119,20 +119,20 @@ app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) {
 
     //Slider with ticks
     $scope.slider_ticks = {
-        value: 4,
+        value: 1,
         options: {
-            ceil: 16,
-            floor: 4,
+            ceil: 200,
+            floor: 29,
             showTicks: true
         }
     };
 
     //Slider with ticks and values
     $scope.slider_ticks_values = {
-        value: 16,
+        value: 29,
         options: {
-            ceil: 16,
-            floor: 4,
+            ceil: 200,
+            floor: 29,
             showTicksValues: true
         }
     };

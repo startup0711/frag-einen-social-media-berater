@@ -373,29 +373,19 @@
                                               <div ng-app="rzSliderDemo">
                                                 <div ng-controller="MainCtrl" class="wrapper">
                                               
-                                                    <p class="form-text-frage">In wie viel Stunden brauchen Sie eine Antwort?<br><span style="font-weight: 300;">(Die Stunden beziehen sich auf Werktags 9 - 18 Uhr)</span></p>
+                                                    <p class="form-text-frage">Wie viel bieten Sie für die Antwort?<br><span style="font-weight: 300;">Bei langen und komplizierten Fragen empfehlen wir mehr zu bieten, wenn Sie eine ausführliche Antwort erhalten wollen.</span></p>
 
 
                                                     <article>
-                                                    <rzslider rz-slider-model="slider_ticks_values.value" rz-slider-options="slider_ticks_values.options"></rzslider>
+                                                    <rzslider rz-slider-model="minSlider.value" rz-slider-options="minSlider.options"></rzslider>
                                                     </article>
-
-                                                    <p class="form-text-frage">Wie komplex ist die Frage? <br><span style="font-weight: 300;">1 = Leicht, 2 = Mittel, 3 = Schwer</span></p>
-
-                                                    <article>
-                                                    <rzslider
-                                                      rz-slider-model="slider_translate_html.minValue"
-                                                      rz-slider-options="slider_translate_html.options"
-                                                    ></rzslider>
-                                                    </article>
-
 
 
                                                     <label style="margin-top:25px;font-weight:400">
-                                                      <input type="checkbox"> Meine Beratung soll vertraulich sein
+                                                      <input type="checkbox"> Meine Beratung soll vertraulich sein (Mindesteinsatz: 60€)
                                                     </label>
 
-                                                    <h3 style="margin-top:25px;padding-bottom:20px">Ihr Preis: {{(149-(slider_ticks_values.value*10))+(slider_translate_html.minValue*40)}}€</h3>
+                                                    <h3 style="margin-top:25px;padding-bottom:20px">Ihr Preis: {{minSlider.value}}€</h3>
                                                 </div>
                                               </div>
 
