@@ -1,6 +1,6 @@
 var app = angular.module('rzSliderDemo', ['rzModule', 'ui.bootstrap']);
 
-app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $modal) {
+app.controller('MainCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
     //Minimal slider config
     $scope.minSlider = {
         value: 29,
